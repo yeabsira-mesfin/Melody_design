@@ -1,4 +1,6 @@
 import { useMemo } from "react";
+import Himg from './assets/Hero.jpg';
+import ProjectOne from './assets/ProjectOne.gif';
 import {
   ArrowRight,
   CheckCircle2,
@@ -11,7 +13,7 @@ import {
 type NavItem = { label: string; href: string };
 
 function Container({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto w-full max-w-6xl px-5">{children}</div>;
+  return <div className="w-full max-w-6xl px-5 mx-auto">{children}</div>;
 }
 
 function SectionTitle({
@@ -42,7 +44,7 @@ function SectionTitle({
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70">
+    <span className="inline-flex items-center px-3 py-1 text-xs border rounded-full border-black/10 bg-white/70 text-black/70">
       {children}
     </span>
   );
@@ -106,7 +108,7 @@ function Navbar({ items }: { items: NavItem[] }) {
       <Container>
         <div className="flex items-center justify-between py-4">
           <a href="#home" className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl border border-black/10 bg-white grid place-items-center">
+            <div className="grid bg-white border h-9 w-9 rounded-xl border-black/10 place-items-center">
               <span className="text-sm font-semibold text-[color:var(--deep)]">
                 M
               </span>
@@ -119,7 +121,7 @@ function Navbar({ items }: { items: NavItem[] }) {
             </div>
           </a>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="items-center hidden gap-6 md:flex">
             {items.map((it) => (
               <a
                 key={it.href}
@@ -161,7 +163,7 @@ function LeaderCard({
         <p className="mt-1 text-sm text-black/60">{title}</p>
         <p className="mt-4 text-sm leading-relaxed text-black/70">{bio}</p>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 mt-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-black/10 bg-[color:var(--bg)] p-4">
             <p className="text-xs text-black/55">Focus</p>
             <p className="mt-1 text-sm font-semibold">Spatial coherence</p>
@@ -174,7 +176,7 @@ function LeaderCard({
       </div>
 
       <div className="rounded-2xl border border-black/10 bg-[color:var(--surface)] p-3 shadow-sm">
-        <img src={img} alt={name} className="h-full w-full rounded-xl object-cover" />
+        <img src={img} alt={name} className="object-cover w-full h-full rounded-xl" />
       </div>
     </div>
   );
@@ -254,7 +256,7 @@ export default function App() {
 
   const works = useMemo(
     () => [
-      { title: "Residence, Addis Ababa", tag: "Residential", img: "https://placehold.co/1200x900/png?text=Project+01" },
+      { title: "Residence, Addis Ababa", tag: "Residential", img: ProjectOne },
       { title: "Boutique Showroom", tag: "Commercial", img: "https://placehold.co/1200x900/png?text=Project+02" },
       { title: "Hospitality Lounge", tag: "Hospitality", img: "https://placehold.co/1200x900/png?text=Project+03" },
       { title: "Office Interior System", tag: "Workplace", img: "https://placehold.co/1200x900/png?text=Project+04" },
@@ -277,16 +279,16 @@ export default function App() {
                 <Pill>Ethiopia based</Pill>
               </div>
 
-              <h1 className="mt-5 text-3xl sm:text-5xl font-semibold leading-tight">
+              <h1 className="mt-5 text-3xl font-semibold leading-tight sm:text-5xl">
                 Articulating interior architectures beyond surface
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-black/70">
+              <p className="max-w-xl mt-4 text-sm leading-relaxed sm:text-base text-black/70">
                 Spatial intelligence informed by culture, proportion, and contemporary
                 inhabitation.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mt-6">
                 <Button href="#contact">
                   Initiate Consultation <ArrowRight size={16} />
                 </Button>
@@ -295,16 +297,16 @@ export default function App() {
                 </Button>
               </div>
 
-              <div className="mt-8 grid grid-cols-3 gap-3 max-w-lg">
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-4">
+              <div className="grid max-w-lg grid-cols-3 gap-3 mt-8">
+                <div className="p-4 border rounded-2xl border-black/10 bg-white/70">
                   <p className="text-xs text-black/60">Focus</p>
                   <p className="mt-1 text-sm font-semibold">Interior architecture</p>
                 </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-4">
+                <div className="p-4 border rounded-2xl border-black/10 bg-white/70">
                   <p className="text-xs text-black/60">Method</p>
                   <p className="mt-1 text-sm font-semibold">Architectural inquiry</p>
                 </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-4">
+                <div className="p-4 border rounded-2xl border-black/10 bg-white/70">
                   <p className="text-xs text-black/60">Outcome</p>
                   <p className="mt-1 text-sm font-semibold">Enduring spaces</p>
                 </div>
@@ -314,26 +316,26 @@ export default function App() {
             <div className="relative">
               <div className="rounded-3xl border border-black/10 bg-[color:var(--surface)] p-3 shadow-sm">
                 <img
-                  src="https://placehold.co/1400x1100/png?text=Hero+Image"
+                  src={Himg}
                   alt="Hero placeholder"
                   className="h-[420px] w-full rounded-2xl object-cover"
                 />
               </div>
 
-              <div className="mt-4 grid grid-cols-4 gap-3">
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-3">
+              <div className="grid grid-cols-4 gap-3 mt-4">
+                <div className="p-3 border rounded-2xl border-black/10 bg-white/70">
                   <div className="h-10 w-full rounded-xl bg-[color:var(--sage)]" />
                   <p className="mt-2 text-[11px] text-black/60">Sage</p>
                 </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-3">
+                <div className="p-3 border rounded-2xl border-black/10 bg-white/70">
                   <div className="h-10 w-full rounded-xl bg-[color:var(--moss)]" />
                   <p className="mt-2 text-[11px] text-black/60">Moss</p>
                 </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-3">
+                <div className="p-3 border rounded-2xl border-black/10 bg-white/70">
                   <div className="h-10 w-full rounded-xl bg-[color:var(--taupe)]" />
                   <p className="mt-2 text-[11px] text-black/60">Taupe</p>
                 </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-3">
+                <div className="p-3 border rounded-2xl border-black/10 bg-white/70">
                   <div className="h-10 w-full rounded-xl bg-[color:var(--deep)]" />
                   <p className="mt-2 text-[11px] text-black/60">Deep</p>
                 </div>
@@ -382,7 +384,7 @@ export default function App() {
                 spatial efficiency, cultural reference, and material intelligence, executed
                 with conceptual clarity and technical discipline.
               </p>
-              <div className="mt-5 h-px bg-black/10" />
+              <div className="h-px mt-5 bg-black/10" />
               <h3 className="mt-5 text-base font-semibold">Vision</h3>
               <p className="mt-2 text-sm leading-relaxed text-black/70">
                 To establish Melody Interior Design Office as a reference practice in Ethiopia
@@ -393,9 +395,9 @@ export default function App() {
 
             <div className="rounded-2xl border border-black/10 bg-[color:var(--surface)] p-3 shadow-sm">
               <img
-                src="https://placehold.co/1400x1100/png?text=Studio+Image"
+                src={"Simg"}
                 alt="Studio placeholder"
-                className="h-full w-full rounded-xl object-cover"
+                className="object-cover w-full h-full rounded-xl"
               />
             </div>
           </div>
@@ -467,7 +469,7 @@ export default function App() {
                 <img
                   src={w.img}
                   alt={w.title}
-                  className="h-44 w-full rounded-xl object-cover"
+                  className="object-cover w-full h-44 rounded-xl"
                 />
                 <div className="mt-3">
                   <p className="text-xs text-black/55">{w.tag}</p>
@@ -477,7 +479,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-8 flex">
+          <div className="flex mt-8">
             <Button href="#contact">
               View Selected Works <ArrowRight size={16} />
             </Button>
@@ -510,7 +512,7 @@ export default function App() {
               <img
                 src="https://placehold.co/1400x1100/png?text=Material+Study"
                 alt="Materials placeholder"
-                className="h-full w-full rounded-xl object-cover"
+                className="object-cover w-full h-full rounded-xl"
               />
             </div>
           </div>
@@ -535,13 +537,13 @@ export default function App() {
               img="https://placehold.co/1200x1400/png?text=Meskerem"
             />
 
-            <LeaderCard
+            {/* <LeaderCard
               name="Yonathan Gidey"
               role="Co-Lead | Design Operations"
               title="Interior Architecture"
               bio="Yonathan supports the practice through disciplined project coordination, design development structure, and delivery oversight, ensuring concepts translate into resolved, buildable interior systems."
               img="https://placehold.co/1200x1400/png?text=Yonathan"
-            />
+            /> */}
           </div>
         </Container>
       </section>
@@ -584,7 +586,7 @@ export default function App() {
               </div>
 
               <form
-                className="rounded-2xl border border-black/10 bg-white/70 p-5"
+                className="p-5 border rounded-2xl border-black/10 bg-white/70"
                 onSubmit={(e) => {
                   e.preventDefault();
                   alert("Form submitted (demo). We can connect this to email next.");
@@ -594,7 +596,7 @@ export default function App() {
                   <label className="grid gap-1">
                     <span className="text-xs text-black/60">Name</span>
                     <input
-                      className="rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black/10"
+                      className="px-3 py-2 text-sm bg-white border outline-none rounded-xl border-black/10 focus:ring-2 focus:ring-black/10"
                       placeholder="Your name"
                       required
                     />
@@ -604,7 +606,7 @@ export default function App() {
                     <span className="text-xs text-black/60">Email</span>
                     <input
                       type="email"
-                      className="rounded-xl border border-black/10 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black/10"
+                      className="px-3 py-2 text-sm bg-white border outline-none rounded-xl border-black/10 focus:ring-2 focus:ring-black/10"
                       placeholder="you@example.com"
                       required
                     />
@@ -634,7 +636,7 @@ export default function App() {
             </div>
           </div>
 
-          <p className="py-10 text-center text-xs text-black/50">
+          <p className="py-10 text-xs text-center text-black/50">
             © {new Date().getFullYear()} Melody Interior Design Office. All rights reserved.
           </p>
         </Container>
