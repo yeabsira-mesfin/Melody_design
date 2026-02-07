@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import Himg from './assets/Hero.jpg';
 import ProjectOne from './assets/ProjectOne.gif';
+import Studio from './assets/Studio.gif';
 import {
   ArrowRight,
   CheckCircle2,
@@ -395,7 +396,7 @@ export default function App() {
 
             <div className="rounded-2xl border border-black/10 bg-[color:var(--surface)] p-3 shadow-sm">
               <img
-                src={"Simg"}
+                src={Studio}
                 alt="Studio placeholder"
                 className="object-cover w-full h-full rounded-xl"
               />
